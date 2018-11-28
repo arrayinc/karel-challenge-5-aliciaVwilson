@@ -34,3 +34,43 @@ solve the more general case?
 
 import "turns";
 
+function GiveTreesFoliage(){
+	while(beepersInBag()){
+		findTree();
+		findTreeTop();
+		placeLeaves();
+		climbDownTree();
+	}
+}
+
+function findTree(){
+	while(frontIsClear()){
+		move();
+	}
+}
+
+function findTreeTop(){
+	turnLeft();
+	while(rightIsBlocked()){
+		move();
+	}
+}
+
+function placeLeaves(){
+	repeat(3){
+		putBeeper();
+		move();
+		turnRight();
+	}
+	putBeeper();
+}
+
+function climbDownTree(){
+	turnLeft();
+	while(frontIsClear()){
+		move();
+	}
+	turnLeft();
+}
+
+
